@@ -25,6 +25,8 @@ jobs:
     # Update references
     - name: Git Sumbodule Update
       run: |
+        rm -rf universal-reconstruction
+        rm -rf universal-reconstruction-dev
         git pull --recurse-submodules
         git submodule update --remote --recursive
 
