@@ -13,4 +13,4 @@
 [submodule "nanite"]
 	path = nanite
 	url = https://github.com/murapix/profectus
-    branch = break-the-cycle
+	branch = break-the-cycle
