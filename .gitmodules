@@ -10,3 +10,7 @@
 	path = oasis
 	url = https://github.com/murapix/Universal-Reconstruction
 	branch = igm-new-years-2022
+[submodule "nanite"]
+	path = nanite
+	url = https://github.com/murapix/profectus
+    branch = break-the-cycle
