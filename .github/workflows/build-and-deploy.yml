@@ -30,3 +30,24 @@ jobs:
         branch: gh-pages # The branch the action should deploy to.
         folder: nanite/dist # The build directory the action should deploy.
         target-folder: nanite # The folder the action should deploy to
+
+    - name: Deploy 🚀 (Universal Reconstruction)
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: universal-reconstruction # The build directory the action should deploy.
+        target-folder: universal-reconstruction # The folder the action should deploy to
+        
+    - name: Deploy 🚀 (Universal Reconstruction - dev branch)
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: universal-reconstruction-dev # The build directory the action should deploy.
+        target-folder: universal-reconstruction-dev # The folder the action should deploy to
+        
+    - name: Deploy 🚀 (Oasis)
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: oasis # The build directory the action should deploy.
+        target-folder: oasis # The folder the action should deploy to
