@@ -1,0 +1,138 @@
+.researchContainer {
+    width: 300px;
+    height: 50px;
+    color: white;
+    background-color: black;
+    border: solid #ffffff 2px;
+    border-radius: 15px;
+    padding: 0px 15px;
+}
+
+.researchable {
+    color: white;
+}
+
+.notResearchable {
+    color: grey;
+    border-color: grey;
+}
+
+.queueIndex {
+    width: 12px;
+    height: 12px;
+    margin: 2px;
+    border: solid white 2px;
+    border-radius: 50%;
+    position: absolute;
+    text-align: center;
+    padding: 2px;
+    top: 0%;
+    left: 0%;
+}
+
+.researchName {
+    font-size: 20px;
+    margin: 2px;
+    text-align: left;
+    position: absolute;
+    top: 0%;
+    left: 24px;
+}
+
+.researchType {
+    margin: 2px;
+    text-align: left;
+    position: absolute;
+    bottom: 0%;
+    left: 24px;
+}
+
+.progressDisplay {
+    margin: 2px;
+    text-align: right;
+    position: absolute;
+    top: 0%;
+    right: 24px;
+}
+
+.researchDisplay {
+    position: absolute;
+    bottom: 0%;
+    right: 15px;
+    font-size: 25px;
+    opacity: 50%;
+    margin: 2px;
+}
+
+.researched {
+    opacity: 100%;
+}
+
+.researchContainer.researched {
+    background-color: #0000ff40;
+}
+
+.researchContainer.researchable {
+    background-color: #202020;
+}
+
+.researchTableDiv {
+    overflow-x: scroll;
+    max-width: 90vw;
+}
+
+.researchTableDiv::-webkit-scrollbar {
+    width: 20px;
+}
+
+.researchTableDiv::-webkit-scrollbar-track {
+    border: solid white 2px;
+    border-radius: 10px;
+    background: black;
+}
+
+.researchTableDiv::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: white;
+}
+
+.researchFade::after {
+    content: "";
+    z-index: 1;
+    pointer-events: none;
+    background-image: linear-gradient(to right, #0f0f0f 1%, #0000 5%, #0000 95%, #0f0f0f 99%);
+    width: 91vw;
+    height: inherit;
+    position: absolute;
+    left: 4vw;
+}
+
+table.researchTable {
+    border-spacing: 0px;
+}
+
+td button:hover {
+    z-index: 1;
+}
+
+td button:hover .tooltip {
+    background-color: black;
+}
+
+.resourceTable {
+    border-collapse: collapse;
+}
+
+.resourceTable > tr {
+    border-top: 1px solid white;
+}
+.resourceTable > tr:first-child {
+    border-top: none;
+}
+.resourceTable td {
+    padding: 4px 0;
+}
+
+.tooltip.opaque {
+    background-color: rgba(0,0,0);
+}
