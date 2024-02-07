@@ -12,45 +12,45 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16.x
-    
+
     - name: Checkout 🛎️
       uses: actions/checkout@v2
       with:
         submodules: recursive
-    
-    - name: Install and Build 🔧 (Universal Reconstruction - dev branch)
-      working-directory: universal-reconstruction-dev
-      run: |
-        yarn install --frozen-lockfile
-        yarn run build
-    
-    - name: Deploy 🚀 (Universal Reconstruction - dev branch)
-      uses: JamesIves/github-pages-deploy-action@v4.2.5
-      with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: universal-reconstruction-dev/dist # The build directory the action should deploy.
-        target-folder: universal-reconstruction-dev # The folder the action should deploy to
-     
+
     - name: Install and Build 🔧 (Nanite)
       working-directory: nanite
       run: |
         yarn install --frozen-lockfile
         yarn run build
-    
+
     - name: Deploy 🚀 (Nanite)
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
         branch: gh-pages # The branch the action should deploy to.
         folder: nanite/dist # The build directory the action should deploy.
         target-folder: nanite # The folder the action should deploy to
-    
+
+    - name: Install and Build 🔧 (Universal Reconstruction - dev branch)
+      working-directory: universal-reconstruction-dev
+      run: |
+        yarn install --frozen-lockfile
+        yarn run build
+
+    - name: Deploy 🚀 (Universal Reconstruction - dev branch)
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: universal-reconstruction-dev/dist # The build directory the action should deploy.
+        target-folder: universal-reconstruction-dev # The folder the action should deploy to
+
     - name: Deploy 🚀 (Universal Reconstruction)
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
         branch: gh-pages # The branch the action should deploy to.
         folder: universal-reconstruction # The build directory the action should deploy.
         target-folder: universal-reconstruction # The folder the action should deploy to
-       
+
     - name: Deploy 🚀 (Oasis)
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
