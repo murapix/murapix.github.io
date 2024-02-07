@@ -38,18 +38,18 @@ jobs:
         folder: universal-reconstruction # The build directory the action should deploy.
         target-folder: universal-reconstruction # The folder the action should deploy to
     
-    - name: Install and Build 🔧 (Universal Reconstruction - dev branch)
-      working-directory: universal-reconstruction-dev
-      run: |
-        yarn install --frozen-lockfile
-        yarn run build
+    # - name: Install and Build 🔧 (Universal Reconstruction - dev branch)
+    #   working-directory: universal-reconstruction-dev
+    #   run: |
+    #     yarn install --frozen-lockfile
+    #     yarn run build
 
-    - name: Deploy 🚀 (Universal Reconstruction - dev branch)
-      uses: JamesIves/github-pages-deploy-action@v4.2.5
-      with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: universal-reconstruction-dev/dist # The build directory the action should deploy.
-        target-folder: universal-reconstruction-dev # The folder the action should deploy to
+    # - name: Deploy 🚀 (Universal Reconstruction - dev branch)
+    #   uses: JamesIves/github-pages-deploy-action@v4.2.5
+    #   with:
+    #     branch: gh-pages # The branch the action should deploy to.
+    #     folder: universal-reconstruction-dev/dist # The build directory the action should deploy.
+    #     target-folder: universal-reconstruction-dev # The folder the action should deploy to
         
     - name: Deploy 🚀 (Oasis)
       uses: JamesIves/github-pages-deploy-action@v4.2.5
