@@ -4,8 +4,8 @@
 	branch = master
 [submodule "universal-reconstruction-dev"]
 	path = universal-reconstruction-dev
-	url = https://github.com/murapix/Universal-Reconstruction
-	branch = dev
+	url = https://github.com/murapix/profectus
+	branch = universal-reconstruction
 [submodule "oasis"]
 	path = oasis
 	url = https://github.com/murapix/Universal-Reconstruction
