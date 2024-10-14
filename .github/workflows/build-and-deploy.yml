@@ -24,6 +24,7 @@ jobs:
         yarn install --frozen-lockfile
         yarn run build
 
+    # Deploys <folder> to <branch>/<target-folder>
     - name: Deploy 🚀 (Nanite)
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
@@ -44,6 +45,7 @@ jobs:
       with:
         submodules: recursive
     
+    # Deploys <folder> to <branch>/<target-folder>
     - name: Deploy 🚀 (Universal Reconstruction)
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
@@ -70,6 +72,7 @@ jobs:
         yarn install --frozen-lockfile
         yarn run build
 
+    # Deploys <folder> to <branch>/<target-folder>
     - name: Deploy 🚀 (Universal Reconstruction - dev branch)
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
@@ -77,6 +80,27 @@ jobs:
         folder: universal-reconstruction-dev/dist # The build directory the action should deploy.
         target-folder: universal-reconstruction-dev # The folder the action should deploy to
 
+  universal-reconstruction-old:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set Node.js version
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+
+    - name: Checkout 🛎️
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    
+    # Deploys <folder> to <branch>/<target-folder>
+    - name: Deploy 🚀 (Universal Reconstruction)
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: universal-reconstruction # The build directory the action should deploy.
+        target-folder: universal-reconstruction-old # The folder the action should deploy to  
+        
   oasis:
     runs-on: ubuntu-latest
     steps:
@@ -90,6 +114,7 @@ jobs:
       with:
         submodules: recursive
   
+    # Deploys <folder> to <branch>/<target-folder>
     - name: Deploy 🚀 (Oasis)
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
