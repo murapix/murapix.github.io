@@ -1,0 +1,25 @@
+{
+    "$schema": "./projInfo-schema.json",
+    
+	"title": "Universal Reconstruction",
+    "description": "An expanded reversal of Distance Incremental",
+	"id": "universal_reconstruction",
+	"author": "Escapee",
+	"discordName": "The Paper Pilot Community",
+	"discordLink": "https://discord.gg/WzejVAx",
+
+	"versionNumber": "1.0.0",
+	"versionTitle": "Revitalization",
+
+	"allowGoBack": true,
+	"defaultShowSmall": false,
+	"defaultDigitsShown": 2,
+	"useHeader": true,
+	"banner": null,
+	"logo": "",
+	"initialTabs": [ "root" ],
+
+	"maxTickLength": 3600,
+	"enablePausing": true,
+	"exportEncoding": "base64"
+}

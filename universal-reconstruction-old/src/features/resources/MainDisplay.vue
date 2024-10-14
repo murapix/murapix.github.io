@@ -1,0 +1,63 @@
+<template>
+    <Sticky :style="stickyStyle">
+        <div
+            class="main-display-container"
+            :class="classes ?? {}"
+            :style="[{ height: `${(effectRef?.$el.clientHeight ?? 0) + 50}px` }, style ?? {}]"
+        >
+            <div class="main-display">
+                <span v-if="showPrefix">You have </span>
+                <ResourceVue :resource="resource" :color="color || 'var(--feature-background)'" :include-name="true" />
+                <!-- remove whitespace -->
+                <span v-if="effectComponent"
+                    >, <component :is="effectComponent" ref="effectRef"
+                /></span>
+                <template v-if="modal">
+                    <component :is="render(modal)" />
+                </template>
+            </div>
+        </div>
+    </Sticky>
+</template>
+
+<script setup lang="ts">
+import Sticky from "components/layout/Sticky.vue";
+import type { CoercableComponent, JSXFunction } from "features/feature";
+import type { Resource } from "features/resources/resource";
+import ResourceVue from "features/resources/Resource.vue";
+import Decimal from "util/bignum";
+import { computeOptionalComponent } from "util/vue";
+import { ComponentPublicInstance, ref, Ref, StyleValue } from "vue";
+import { computed, toRefs } from "vue";
+import { render } from "util/vue";
+
+const _props = defineProps<{
+    resource: Resource;
+    color?: string;
+    classes?: Record<string, boolean>;
+    style?: StyleValue;
+    stickyStyle?: StyleValue;
+    effect?: CoercableComponent;
+    modal?: JSXFunction;
+}>();
+const props = toRefs(_props);
+
+const effectRef = ref<ComponentPublicInstance | null>(null);
+
+const effectComponent = computeOptionalComponent(
+    props.effect as Ref<CoercableComponent | undefined>
+);
+
+const showPrefix = computed(() => {
+    return Decimal.lt(props.resource.value, "1e1000");
+});
+</script>
+
+<style>
+.main-display-container {
+    vertical-align: middle;
+    margin-bottom: 20px;
+    display: flex;
+    transition-duration: 0s;
+}
+</style>
