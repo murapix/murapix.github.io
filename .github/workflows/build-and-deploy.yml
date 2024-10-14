@@ -38,20 +38,26 @@ jobs:
     - name: Set Node.js version
       uses: actions/setup-node@v3
       with:
-        node-version: 16.x
+        node-version: 20.x
 
     - name: Checkout 🛎️
       uses: actions/checkout@v2
       with:
         submodules: recursive
-    
+
+    - name: Install and Build 🔧 (Universal Reconstruction - prod branch)
+      working-directory: universal-reconstruction
+      run: |
+        yarn install --frozen-lockfile
+        yarn run build
+
     # Deploys <folder> to <branch>/<target-folder>
-    - name: Deploy 🚀 (Universal Reconstruction)
+    - name: Deploy 🚀 (Universal Reconstruction - prod branch)
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
         branch: gh-pages # The branch the action should deploy to.
-        folder: universal-reconstruction # The build directory the action should deploy.
-        target-folder: universal-reconstruction # The folder the action should deploy to  
+        folder: universal-reconstruction/dist # The build directory the action should deploy.
+        target-folder: universal-reconstruction # The folder the action should deploy to 
     
   universal-reconstruction-dev:
     runs-on: ubuntu-latest

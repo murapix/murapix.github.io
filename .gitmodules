@@ -1,7 +1,3 @@
-[submodule "universal-reconstruction"]
-	path = universal-reconstruction
-	url = https://github.com/murapix/Universal-Reconstruction
-	branch = master
 [submodule "oasis"]
 	path = oasis
 	url = https://github.com/murapix/Universal-Reconstruction
@@ -10,7 +6,15 @@
 	path = nanite
 	url = https://github.com/murapix/profectus
 	branch = break-the-cycle
+[submodule "universal-reconstruction-old"]
+	path = universal-reconstruction-old
+	url = https://github.com/murapix/Universal-Reconstruction
+	branch = master
 [submodule "universal-reconstruction-dev"]
 	path = universal-reconstruction-dev
+	url = https://github.com/murapix/profectus
+	branch = universal-reconstruction-dev
+[submodule "universal-reconstruction"]
+	path = universal-reconstruction
 	url = https://github.com/murapix/profectus
 	branch = universal-reconstruction
